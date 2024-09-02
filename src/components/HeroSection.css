@@ -1,0 +1,195 @@
+/* HeroSection.css */
+
+video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+}
+
+.hero-container {
+    height: calc(100vh - 80px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+}
+
+.hero-container > h1 {
+    color: #fff;
+    font-size: 100px;
+    margin-top: -100px;
+}
+
+.hero-container > p {
+    margin-top: 8px;
+    color: #fff;
+    font-size: 32px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.hero-btns {
+    margin-top: 32px;
+}
+
+.chatbot-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #a8d5ba; /* verde suave */
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.chatbot-btn:hover {
+    background-color: #92c7a3; /* verde un poco más oscuro */
+}
+
+.chat-panel {
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    width: 350px;
+    height: 500px;
+    background-color: #f4f7f4; /* fondo muy claro */
+    color: #333;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ddd;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
+    z-index: 1000;
+    border-radius: 10px 10px 0 0;
+}
+
+.chat-panel.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #a8d5ba; /* verde suave */
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    border-radius: 10px 10px 0 0;
+}
+
+.chat-body {
+    padding: 15px;
+    height: calc(100% - 120px);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #f1f1f1; /* fondo neutro claro */
+}
+
+.chat-body p.user {
+    align-self: flex-end;
+    background-color: #04a062; /* verde muy claro para usuario */
+    color: #333;
+    padding: 10px;
+    margin: 0;
+    border-radius: 15px;
+    max-width: 80%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word;
+}
+
+.chat-body p.bot {
+    align-self: flex-start;
+    background-color: #e2e2e2; /* color suave para bot */
+    color: #333;
+    padding: 10px;
+    margin: 0;
+    border-radius: 15px;
+    max-width: 80%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #555;
+}
+
+.chat-footer {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background-color: #f1f1f1;
+}
+
+.chat-footer textarea {
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: none;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chat-footer button {
+    margin-top: 10px;
+    background-color: #a8d5ba; /* verde suave para botón */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.chat-footer button:hover {
+    background-color: #92c7a3; /* hover con verde más oscuro */
+}
+
+@media screen and (max-width: 960px) {
+    .hero-container > h1 {
+        font-size: 70px;
+        margin-top: -150px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-container > h1 {
+        font-size: 50px;
+        margin-top: -100px;
+    }
+
+    .hero-container > p {
+        font-size: 30px;
+    }
+
+    .btn-mobile {
+        display: block;
+        text-decoration: none;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
